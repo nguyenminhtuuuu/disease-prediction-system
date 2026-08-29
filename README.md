@@ -35,7 +35,8 @@ df_blood['Disease'] = df_blood['Disease'].replace({
 **Class Distribution Analysis:**
 An initial check on the target variable revealed a significant class imbalance, with `Tim mạch` (Heart Disease) and `Huyết khối` (Thrombosis) being the minority classes.
 
-![Class Distribution Before](images/before_balance.png)
+![Class Distribution Before](images/chart1.png)
+![Class Distribution Before](images/chart2.png)
 
 ## 4. Handling Class Imbalance with SMOTE
 
