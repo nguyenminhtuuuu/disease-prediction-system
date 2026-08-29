@@ -51,4 +51,20 @@ X_resampled, Y_resampled = smote.fit_resample(X, df_blood['Disease'])
 ```
 Result after SMOTE:
 The dataset grew from 2,837 rows to 5,004 rows, with each of the 6 classes perfectly balanced at 834 records per class.
-![Class Distribution After](images/chart_after.png)
+![Class Distribution After](images/after.png)
+
+## 5. Model Training & Feature Importance
+The data was split into an 80/20 train-test ratio. A Random Forest Classifier was selected and trained on the resampled dataset.
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier()
+model.fit(X_train, Y_train)
+importances = model.feature_importances_
+```
+To understand how the model makes decisions, we extracted the feature importances
+![Class Distribution After](images/feature_importance.png)
+
+## 6. Streamlit Web Application
+Users can input real-time blood test parameters to get instant predictions.
+![Class Distribution Streamlit](images/app.png)
