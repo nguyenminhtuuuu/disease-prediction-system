@@ -58,23 +58,3 @@ importance.
 An interactive Streamlit application was developed to allow users to
 enter blood test indicators and receive a predicted disease result.
 
-## Workflow
-
-```text
-Kaggle Datasets
-        ↓
-Data Integration
-        ↓
-Data Quality Checks
-        ↓
-EDA & Distribution Analysis
-        ↓
-Class Imbalance Handling
-        ↓
-Selective SMOTE
-        ↓
-Random Forest
-        ↓
-SHAP Analysis
-        ↓
-Streamlit Application
