@@ -23,7 +23,6 @@ The unified dataset contains **2,837 records** and **25 columns** (24 features a
 Before training, the categorical labels were translated into Vietnamese for consistency:
 
 ```python
-# Chuyển label sang tiếng Việt
 df_blood['Disease'] = df_blood['Disease'].replace({
     'Healthy': 'Khỏe mạnh',
     'Diabetes' : 'Tiểu đường',
@@ -36,7 +35,7 @@ df_blood['Disease'] = df_blood['Disease'].replace({
 **Class Distribution Analysis:**
 An initial check on the target variable revealed a significant class imbalance, with `Tim mạch` (Heart Disease) and `Huyết khối` (Thrombosis) being the minority classes.
 
-![Class Distribution Before](images/class_distribution_before.png)
+![Class Distribution Before](images/before_balance.png)
 
 ## 4. Handling Class Imbalance with SMOTE
 
