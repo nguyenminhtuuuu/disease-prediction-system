@@ -51,6 +51,6 @@ Y = df_blood['Disease']
 # Áp dụng SMOTE để cân bằng dữ liệu
 smote = SMOTE(random_state=43)
 X_resampled, Y_resampled = smote.fit_resample(X, df_blood['Disease'])
-
+```
 Result after SMOTE:
 The dataset grew from 2,837 rows to 5,004 rows, with each of the 6 classes perfectly balanced at 834 records per class.
