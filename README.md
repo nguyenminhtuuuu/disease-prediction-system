@@ -51,4 +51,4 @@ X_resampled, Y_resampled = smote.fit_resample(X, df_blood['Disease'])
 ```
 Result after SMOTE:
 The dataset grew from 2,837 rows to 5,004 rows, with each of the 6 classes perfectly balanced at 834 records per class.
-![Class Distribution Before](images/chart2.png)
+![Class Distribution After](images/chartafter.png)
