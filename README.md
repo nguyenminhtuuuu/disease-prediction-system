@@ -1,60 +1,34 @@
 # Disease Prediction System Based on Blood Test Indicators
+**Tools:** Python, Pandas, Scikit-learn, SMOTE, Imbalanced-learn, Streamlit
 
-Python · Pandas · Scikit-learn · SHAP · Streamlit
+## 1. Introduction
+The dataset consists of blood sample records containing various blood indicators such as Glucose, Cholesterol, Hemoglobin, etc., collected to predict 6 different health conditions. 
 
-## Overview
+The primary goal of this project is to build a robust Machine Learning model capable of multi-class disease prediction while addressing severe class imbalance in the medical dataset using SMOTE. 
 
-This project explores disease prediction based on blood test indicators,
-with a focus on data quality analysis, class distribution, class imbalance,
-predictive modeling, and model interpretability.
+## 2. Dataset Overview
+The unified dataset contains **2,837 records** and **25 columns** (24 features and 1 target variable).
 
-Two Kaggle datasets were merged into a unified dataset and analyzed before
-training machine learning models for multi-class disease prediction.
+| Field Name | Data Type | Description |
+| :--- | :--- | :--- |
+| `Glucose` | FLOAT | Blood sugar level |
+| `Cholesterol` | FLOAT | Cholesterol level |
+| `Hemoglobin` | FLOAT | Hemoglobin concentration |
+| `Platelets` | FLOAT | Platelet count |
+| `White Blood Cells` | FLOAT | White blood cell count |
+| `Disease` (Target) | STRING | 6 classes: *Khỏe mạnh, Tiểu đường, Tan máu bẩm sinh, Thiếu máu, Huyết khối, Tim mạch* |
 
-## Dataset
+## 3. Data Processing & Exploratory Data Analysis (EDA)
 
-- **Source:** Kaggle
-- **Datasets:** 2
-- **Records:** approximately 2,800
-- **Classes:** 6 disease classes
+Before training, the categorical labels were translated into Vietnamese for consistency:
 
-## Data Analysis
-
-Performed data quality checks and distribution analysis to examine:
-
-- Missing values
-- Outliers
-- Class distribution
-- Class imbalance
-
-Two minority classes were identified among the six disease classes.
-
-## Handling Class Imbalance
-
-Selective SMOTE was applied using a custom sampling strategy to address
-minority-class imbalance while preserving the majority-class distribution.
-
-## Model
-
-A Random Forest classifier was trained for multi-class disease prediction.
-
-### Performance
-
-**F1-score: 0.981**
-
-> Specify whether this is Macro F1, Weighted F1, or another F1 metric
-> based on the actual evaluation result before publishing.
-
-## Model Interpretability
-
-SHAP was used to identify the blood indicators that contributed most
-strongly to model predictions.
-
-This provided additional insight into model behavior and feature
-importance.
-
-## Application
-
-An interactive Streamlit application was developed to allow users to
-enter blood test indicators and receive a predicted disease result.
-
+```python
+# Chuyển label sang tiếng Việt
+df_blood['Disease'] = df_blood['Disease'].replace({
+    'Healthy': 'Khỏe mạnh',
+    'Diabetes' : 'Tiểu đường',
+    'Thalasse' : 'Tan máu bẩm sinh',
+    'Anemia' : 'Thiếu máu',
+    'Thromboc' : 'Huyết khối',
+    'Heart Di' : 'Tim mạch'
+})
