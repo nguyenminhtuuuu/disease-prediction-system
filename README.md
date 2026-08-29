@@ -32,6 +32,7 @@ df_blood['Disease'] = df_blood['Disease'].replace({
     'Thromboc' : 'Huyết khối',
     'Heart Di' : 'Tim mạch'
 })
+```
 **Class Distribution Analysis:**
 An initial check on the target variable revealed a significant class imbalance, with `Tim mạch` (Heart Disease) and `Huyết khối` (Thrombosis) being the minority classes.
 
