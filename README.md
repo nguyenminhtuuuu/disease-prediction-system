@@ -36,7 +36,6 @@ df_blood['Disease'] = df_blood['Disease'].replace({
 An initial check on the target variable revealed a significant class imbalance, with `Tim mạch` (Heart Disease) and `Huyết khối` (Thrombosis) being the minority classes.
 
 ![Class Distribution Before](images/chart1.png)
-![Class Distribution Before](images/chart2.png)
 
 ## 4. Handling Class Imbalance with SMOTE
 
@@ -44,14 +43,12 @@ To prevent the model from becoming biased towards the majority classes, the **SM
 
 ```python
 from imblearn.over_sampling import SMOTE
-
-# Tách biến độc lập (X) và biến mục tiêu (Y)
 X = df_blood.drop('Disease', axis=1)
 Y = df_blood['Disease']
 
-# Áp dụng SMOTE để cân bằng dữ liệu
 smote = SMOTE(random_state=43)
 X_resampled, Y_resampled = smote.fit_resample(X, df_blood['Disease'])
 ```
 Result after SMOTE:
 The dataset grew from 2,837 rows to 5,004 rows, with each of the 6 classes perfectly balanced at 834 records per class.
+![Class Distribution Before](images/chart2.png)
